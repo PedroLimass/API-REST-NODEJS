@@ -1,6 +1,6 @@
 import fastify from 'fastify'
 import { knex } from './database.js'
-// import { randomUUID } from 'crypto'
+import { env } from './env/index.js'
 
 const app = fastify()
 
@@ -10,19 +10,11 @@ app.get('/hello', async () => {
     .select('*')
 
   return transactions
-  // const transactions = await knex('transactions')
-  //   .insert({
-  //     id: randomUUID(),
-  //     title: 'New Transaction',
-  //     amount: 1000,
-  //   })
-  //   .returning('*')
-  // return transactions
 })
 
 app
   .listen({
-    port: 3333,
+    port: env.PORT,
   })
   .then(() => {
     console.log('HTTP Server Running!')
