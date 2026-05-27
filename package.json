@@ -20,16 +20,21 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "lint": "eslint src --ext .ts --fix",
-    "knex": "node --no-warnings --import tsx ./node_modules/.bin/knex"
+    "knex": "node --no-warnings --import tsx ./node_modules/.bin/knex",
+    "test": "vitest"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
     "@types/node": "^25.9.1",
+    "@types/supertest": "^7.2.0",
     "eslint": "^8.57.1",
+    "supertest": "^7.2.2",
     "tsx": "^4.22.3",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.7"
   },
   "dependencies": {
+    "@fastify/cookie": "^11.0.2",
     "dotenv": "^17.4.2",
     "fastify": "^5.8.5",
     "knex": "^3.2.10",

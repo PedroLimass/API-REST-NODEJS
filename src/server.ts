@@ -1,16 +1,5 @@
-import fastify from 'fastify'
-import { knex } from './database.js'
+import { app } from './app.js'
 import { env } from './env/index.js'
-
-const app = fastify()
-
-app.get('/hello', async () => {
-  const transactions = await knex('transactions')
-    .where('amount', 1000)
-    .select('*')
-
-  return transactions
-})
 
 app
   .listen({
